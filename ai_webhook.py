@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from openai import OpenAI  # لاحظ التغيير هنا
+from openai import OpenAI  # لاحظ هنا استيراد OpenAI بالطريقة الجديدة
 
 app = Flask(__name__)
 
