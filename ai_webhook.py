@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
-import openai
+from openai import OpenAI  # لاحظ التغيير هنا
 
 app = Flask(__name__)
 
-client = openai.OpenAI(api_key="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")  # ← تأكد إن المفتاح مظبوط هنا
+client = OpenAI(api_key="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")
 
 @app.route('/ask_ai', methods=['POST'])
 def ask_ai():
@@ -23,5 +23,5 @@ def ask_ai():
         answer = response.choices[0].message.content
         return jsonify({"answer": answer})
     except Exception as e:
-        print(f"❗ Error Occurred: {e}")  # <<< هنا نطبع الخطأ في اللوج
+        print(f"❗ Error Occurred: {e}") 
         return jsonify({"error": str(e)}), 500
