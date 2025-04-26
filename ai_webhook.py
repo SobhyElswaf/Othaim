@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from openai import OpenAI  # لاحظ هنا استيراد OpenAI بالطريقة الجديدة
+from openai import OpenAI  # ✨ خد بالك من استيراد OpenAI الجديد
 
 app = Flask(__name__)
 
@@ -23,5 +23,5 @@ def ask_ai():
         answer = response.choices[0].message.content
         return jsonify({"answer": answer})
     except Exception as e:
-        print(f"❗ Error Occurred: {e}") 
+        print(f"❗ Error Occurred: {e}")
         return jsonify({"error": str(e)}), 500
