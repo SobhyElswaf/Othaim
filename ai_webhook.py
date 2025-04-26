@@ -3,7 +3,7 @@ import openai
 
 app = Flask(__name__)
 
-client = openai.OpenAI(api_key="YOUR_API_KEY")  # ← تأكد إن المفتاح مظبوط هنا
+client = openai.OpenAI(api_key="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")  # ← تأكد إن المفتاح مظبوط هنا
 
 @app.route('/ask_ai', methods=['POST'])
 def ask_ai():
